@@ -1,22 +1,23 @@
 {
-  "name": "electron-quick-start",
+  "name": "KTB_Statust",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Statust Control 3CX",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "http://49.231.40.187.:8081",
   "keywords": [
-    "Electron",
+    "3CX",
     "quick",
     "start",
-    "tutorial",
-    "demo"
+    "V.Prachyapol",
+    "2APlus"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "V.Prachyapol",
+  "license": "2APLUS.co",
   "devDependencies": {
-    "electron": "^16.0.5"
+    "electron": "^16.0.5",
+    "electron-packager": "^15.4.0"
   }
 }
