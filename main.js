@@ -16,37 +16,61 @@ function createWindow() {
   // mainWindow.loadURL('http://49.231.40.187:8081/')
   mainWindow.loadURL('http://127.0.0.1:8081/')
 
+
+
+  // var authButton = document.getElementById("auth-button");
+  // authButton.addEventListener("click",function(){alert("clicked!");});
+  const fs = require('fs');
+
+  let rawdata = fs.readFileSync('Extention.json');
+  let extention = JSON.parse(rawdata);
+  console.log(extention);
+
+
+  var y=extention.ext;
+
+  mainWindow.webContents.on('did-finish-load', () => {
+
+    let code = "document.getElementById('in_ext').value= "+y+" ;"
+             
+    mainWindow.webContents.executeJavaScript(code);
+  });
+ 
+  // mainWindow.openDevTools();
+
   // and load the index.html of the app.
   // mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 // mainWindow.loadFile("'C:\\ProgramData\\3CXPhone for Windows\\PhoneApp\\3CXWin8Phone.exe'")
 
+// function inputData(){
+//   document.getElementById("in_ext").value= 1003;
+// }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
+
 app.whenReady().then(() => {
   createWindow()
-  const fs = require('fs');
 
-  let rawdata = fs.readFileSync('student.json');
-  let student = JSON.parse(rawdata);
-  console.log(student);
 
-  const {ipcMain} = require('electron')
+  // let x = document.getElementById('in_ext');
+  // x.value = 1003;  
 
   // receive message from index.html 
-  ipcMain.on('in_ext', (event, arg) => {
-    console.log( "arg" );
+  // ipcMain.on('in_ext', (event, arg) => {
+  //   console.log( "arg" );
 
-    console.log( arg );
-    
-    // send message to index.html
-    event.sender.send('in_ext', 'hello' );
-    });
+  //   console.log( arg );
+
+  //   // send message to index.html
+  //   event.sender.send('in_ext', 'hello' );
+  //   });
+
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
