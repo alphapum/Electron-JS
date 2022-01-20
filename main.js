@@ -8,13 +8,14 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 300,
     height: 750,
+    icon: __dirname + '/Icon/icons.ico',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
   // Load a remote URL
-  // mainWindow.loadURL('http://49.231.40.187:8081/')
-  mainWindow.loadURL('http://127.0.0.1:8081/')
+  mainWindow.loadURL('http://49.231.40.187:8081/')
+  // mainWindow.loadURL('http://127.0.0.1:8081/')
 
 
 
@@ -22,7 +23,7 @@ function createWindow() {
   // authButton.addEventListener("click",function(){alert("clicked!");});
   const fs = require('fs');
 
-  let rawdata = fs.readFileSync('Extention.json');
+  let rawdata = fs.readFileSync( __dirname +'/Extention.json');
   let extention = JSON.parse(rawdata);
   console.log(extention);
 
@@ -42,7 +43,7 @@ function createWindow() {
   // mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 }
 // mainWindow.loadFile("'C:\\ProgramData\\3CXPhone for Windows\\PhoneApp\\3CXWin8Phone.exe'")
 

@@ -46,3 +46,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 
 Export to exe
 electron-packager E:\Project\KTB\electron-quick-start Status --platform=win32  --arch=x64
+
+
+package.json
+"build": "electron-packager --out winx64 --overwrite --platform win32 --appname Agen-Status . --icon icons.ico"

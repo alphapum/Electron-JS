@@ -4,7 +4,8 @@
   "description": "Statust Control 3CX",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager --out KTB --overwrite --platform win32 --appname Agen-Status . --icon icons.ico"
   },
   "repository": "http://49.231.40.187.:8081",
   "keywords": [
