@@ -16,8 +16,8 @@ function createWindow() {
 
   })
   // Load a remote URL
-  mainWindow.loadURL('http://49.231.40.187:8081/')
-  // mainWindow.loadURL('http://127.0.0.1:8081/')
+  mainWindow.loadURL('http://49.231.40.187:8099/')
+  // mainWindow.loadURL('http://127.0.0.1:8099/')
 
 
 
@@ -35,12 +35,12 @@ function createWindow() {
   mainWindow.webContents.on('did-finish-load', () => {
 
     let code = "document.getElementById('in_ext').value= "+y+" ;"
-    code += "var styleElement = document.createElement('style');"
-    code += "styleElement.id = 'remove-scroll-style';"
-    code += "styleElement.textContent = "
-    code += " 'html::-webkit-scrollbar{display:none !important}' + "
-    code += " 'body::-webkit-scrollbar{display:none !important}'; "
-    code += " document.getElementsByTagName('body')[0].appendChild(styleElement); "
+    // code += "var styleElement = document.createElement('style');"
+    // code += "styleElement.id = 'remove-scroll-style';"
+    // code += "styleElement.textContent = "
+    // code += " 'html::-webkit-scrollbar{display:none !important}' + "
+    // code += " 'body::-webkit-scrollbar{display:none !important}'; "
+    // code += " document.getElementsByTagName('body')[0].appendChild(styleElement); "
              
     mainWindow.webContents.executeJavaScript(code);
 
