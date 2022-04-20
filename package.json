@@ -19,6 +19,6 @@
   "license": "2APLUS.co",
   "devDependencies": {
     "electron": "^16.0.5",
-    "electron-packager": "^15.4.0"
+    "electron-packager": "^15.5.0"
   }
 }
